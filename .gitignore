@@ -1,0 +1,19 @@
+# eclipse
+.project
+.classpath
+.cache-main
+.setting/
+target/
+
+# intellij
+*.iml
+.idea/
+
+# source
+*$/
+derby.log
+metastore_db/
+dependency-reduced-pom.xml
+
+# spark
+spark-warehouse/
