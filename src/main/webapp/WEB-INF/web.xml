@@ -32,7 +32,7 @@
 
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/home</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 	<!-- <servlet-mapping>
@@ -41,6 +41,5 @@
 		<url-pattern>*.css</url-pattern>
 		<url-pattern>*.gif</url-pattern>
 		<url-pattern>*.jpg</url-pattern>
-	</servlet-mapping> -->
-
+	</servlet-mapping>-->
 </web-app>
