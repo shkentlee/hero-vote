@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.medianote.herovote.vote.mapper.VoteMapper">
+	<select id="isDuplicated" parameterType="com.medianote.herovote.vote.model.Vote" resultType="boolean">
+		select 
+			*
+		from 
+			vote
+		where 
+			vote_ymd &gt;= #{vote.voteYmd} AND vote_ymd &lt; date_add(str_to_date(#{vote.voteYmd}, '%Y%m%d'), INTERVAL 1 day))
+	</select>
+</mapper>

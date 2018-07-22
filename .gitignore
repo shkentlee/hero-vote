@@ -2,7 +2,7 @@
 .project
 .classpath
 .cache-main
-.setting/
+.settings/
 target/
 
 # intellij
@@ -17,3 +17,6 @@ dependency-reduced-pom.xml
 
 # spark
 spark-warehouse/
+
+# spring
+.springBeans
