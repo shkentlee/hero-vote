@@ -1,8 +1,13 @@
 package com.medianote.herovote.vote.controller;
 
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,13 +28,14 @@ public class VoteApiController {
 
 	@ResponseBody
 	@RequestMapping(method = RequestMethod.POST, headers = "Accept=application/json")
-    public AjaxResult vote(@RequestBody Vote vote) {
+    public AjaxResult vote(@RequestBody @Valid Vote vote, BindingResult bindingResult) {
 		if (voteService.isDuplicated(vote)) {
-			return new AjaxResult("1001", "중복 투표");
+			return new AjaxResult("1000", "중복 투표");
 		}
 		
-		if (voteService.isGreaterThanMaxium(vote)) {
-			return new AjaxResult("1002", "최대 3명, 최소 1명");
+		if (bindingResult.hasErrors()) {
+			List<ObjectError> errors = bindingResult.getAllErrors();
+			return new AjaxResult("2000", errors.get(0).getDefaultMessage());
 		}
 		
 		voteService.vote(vote);

@@ -13,19 +13,22 @@ import lombok.Data;
 public class Vote {
 	private long id;
 	
-	@NotEmpty(message = "ÀÌ¸§À» ÀÔ·Â ÇØÁÖ¼¼¿ä")
+	@NotEmpty(message = "ì´ë¦„ì„ ì…ë ¥ í•´ì£¼ì„¸ìš”")
 	private String userName;
 	
-	@NotEmpty(message = "¿¬¶ôÃ³¸¦ ÀÔ·Â ÇØÁÖ¼¼¿ä")
-	@Pattern(regexp = "(0-9)+", message = "¼ıÀÚ 0~9 ±îÁö¸¸ ÀÔ·Â °¡´É ÇÕ´Ï´Ù.")
+	@NotEmpty(message = "ì—°ë½ì²˜ë¥¼ ì…ë ¥ í•´ì£¼ì„¸ìš”")
+	@Pattern(regexp = "[0-9]+", message = "ìˆ«ì 0~9 ê¹Œì§€ë§Œ ì…ë ¥ ê°€ëŠ¥ í•©ë‹ˆë‹¤.")
+	@Size(min = 9, max = 11, message = "ì—°ë½ì²˜ 10ì ë˜ëŠ” 11ìë¦¬ ê¹Œì§€ ì…ë ¥ ê°€ëŠ¥ í•©ë‹ˆë‹¤.")
 	private String cellPhone;
 	
-	@NotEmpty(message = "»ı³â¿ùÀÏÀ» ÀÔ·Â ÇØÁÖ¼¼¿ä")
-	private String birthDay;
+	@NotEmpty(message = "ìƒë…„ì›”ì¼ì„ ì…ë ¥ í•´ì£¼ì„¸ìš”")
+	@Size(min = 6, max = 6, message = "ìƒë…„ì›”ì¼ 6ìë¦¬ ì…ë ¥ í•´ì£¼ì„¸ìš”")
+	@Pattern(regexp = "[0-9]+", message = "ìˆ«ì 0~9 ê¹Œì§€ë§Œ ì…ë ¥ ê°€ëŠ¥ í•©ë‹ˆë‹¤.")
+	private String birthday;
 	
 	private String voteYmd;
 	
 	@NotEmpty
-	@Size(min = 1, max = 3, message = "ÃÖ¼Ò 1 ÀÌ»ó 3 ÀÌÇÏ·Î ¼±ÅÃ ÇØÁÖ¼¼¿ä")
+	@Size(min = 1, max = 3, message = "ìµœì†Œ 1 ì´ìƒ 3 ì´í•˜ë¡œ ì„ íƒ í•´ì£¼ì„¸ìš”")
 	private List<Hero> heros;
 }
