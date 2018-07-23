@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author kent(sh.kent.lee@navercorp.com)
  */
 @Controller
-@RequestMapping("/")
+//@RequestMapping("/")
 public class HomeViewController {
     @RequestMapping(method = RequestMethod.GET)
     public String home() {

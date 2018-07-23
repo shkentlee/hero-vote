@@ -4,10 +4,30 @@
 <mapper namespace="com.medianote.herovote.vote.mapper.VoteMapper">
 	<select id="isDuplicated" parameterType="com.medianote.herovote.vote.model.Vote" resultType="boolean">
 		select 
-			*
+			if(COUNT(*)>0,'true','false') AS my_bool
 		from 
 			vote
 		where 
-			vote_ymd &gt;= #{vote.voteYmd} AND vote_ymd &lt; date_add(str_to_date(#{vote.voteYmd}, '%Y%m%d'), INTERVAL 1 day))
+			vote_ymd &gt;= DATE_FORMAT(SYSDATE(), '%Y%m01') AND vote_ymd &lt; date_format(date_add(sysdate(), INTERVAL 1 day), '%Y%m%d')
 	</select>
+	
+	<insert id="insert" parameterType="com.medianote.herovote.vote.model.Vote">
+		insert into vote 
+			(vote_ymd, usr_nm, usr_bymd, usr_cph)
+		values 
+			(DATE_FORMAT(SYSDATE(), '%Y%m%d'), #{userName}, #{birthday}, #{cellPhone})
+		
+		<selectKey keyProperty="id" resultType="long">
+        	SELECT LAST_INSERT_ID()
+    	</selectKey>
+	</insert>
+	
+	<insert id="insertHeros" parameterType="com.medianote.herovote.vote.model.Vote">
+		insert into vote_hero 
+			(vote_seq, hero_cd)
+		values 
+			<foreach collection="heros" item="item" separator=" , ">
+            	(#{id}, #{item.code})
+        	</foreach>
+	</insert>
 </mapper>

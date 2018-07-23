@@ -7,4 +7,8 @@ import com.medianote.herovote.vote.model.Vote;
 @Mapper
 public interface VoteMapper {
 	boolean isDuplicated(Vote vote);
+
+	long insert(Vote vote);
+
+	void insertHeros(Vote vote);
 }
