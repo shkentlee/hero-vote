@@ -21,8 +21,8 @@
 	
 	<!-- mssql -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-		<property name="url" value="jdbc:sqlserver://localhost:3306;selectMethod=cursor;" />
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/herovote" />
 		<property name="username" value="hero" />
 		<property name="password" value="vote" />
 	</bean>
