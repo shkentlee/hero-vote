@@ -2,6 +2,11 @@ package com.medianote.herovote.vote.model;
 
 import java.util.List;
 
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 import lombok.Data;
 
 @Data
