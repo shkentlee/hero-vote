@@ -1,5 +1,8 @@
 package com.medianote.herovote.vote.mapper;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.medianote.herovote.vote.model.Vote;
@@ -11,4 +14,6 @@ public interface VoteMapper {
 	long insert(Vote vote);
 
 	void insertHeros(Vote vote);
+
+	List<Map<String, Long>>  selectSumForHero(Map<String, Object> paramMap);
 }

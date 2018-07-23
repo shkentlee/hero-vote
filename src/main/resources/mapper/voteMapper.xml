@@ -7,8 +7,11 @@
 			if(COUNT(*)>0,'true','false') AS my_bool
 		from 
 			vote
-		where 
+		where
 			vote_ymd &gt;= DATE_FORMAT(SYSDATE(), '%Y%m01') AND vote_ymd &lt; date_format(date_add(sysdate(), INTERVAL 1 day), '%Y%m%d')
+			and usr_nm = #{userName}
+			and usr_bymd = #{birthday}
+			and usr_cph = #{cellPhone}
 	</select>
 	
 	<insert id="insert" parameterType="com.medianote.herovote.vote.model.Vote">
@@ -17,7 +20,7 @@
 		values 
 			(DATE_FORMAT(SYSDATE(), '%Y%m%d'), #{userName}, #{birthday}, #{cellPhone})
 		
-		<selectKey keyProperty="id" resultType="long">
+		<selectKey keyProperty="id" resultType="long" order="AFTER">
         	SELECT LAST_INSERT_ID()
     	</selectKey>
 	</insert>
@@ -30,4 +33,20 @@
             	(#{id}, #{item.code})
         	</foreach>
 	</insert>
+	
+	<select id="selectSumForHero" parameterType="map" resultType="map">
+		select 
+			vh.hero_cd AS "HERO",
+			count(vh.vote_hero_seq) AS "VOTE" 
+		from
+			vote 
+			join vote_hero vh
+			on vote.vote_seq = vh.vote_seq
+		where
+			vote.vote_ymd &gt;= #{startYmd} and vote.vote_ymd &lt; #{endYmd}
+		group by
+			vh.hero_cd
+		order by 
+			vh.hero_cd	 
+	</select>
 </mapper>

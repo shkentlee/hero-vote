@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,5 +42,11 @@ public class VoteApiController {
 		voteService.vote(vote);
 		
     	return new AjaxResult("0000", "success");
+    }
+	
+	@ResponseBody
+	@RequestMapping(value = "/{start}/{end}", method = RequestMethod.GET)
+    public AjaxResult result(@PathVariable("start") String startYmd, @PathVariable("end") String endYmd) {
+    	return new AjaxResult("0000", "success", voteService.result(startYmd, endYmd));
     }
 }

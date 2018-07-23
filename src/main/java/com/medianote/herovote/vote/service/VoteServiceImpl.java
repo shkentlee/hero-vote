@@ -1,5 +1,9 @@
 package com.medianote.herovote.vote.service;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,16 +24,23 @@ public class VoteServiceImpl implements VoteService {
 	@Override
 	@Transactional
 	public void vote(Vote vote) {
-		long id = voteRepository.insert(vote);
-		vote.setId(id);
+		voteRepository.insert(vote);
 		
 		voteRepository.insertHeros(vote);
 	}
 
 	@Override
 	public boolean isGreaterThanMaxium(Vote vote) {
-		// TODO Auto-generated method stub
 		return vote.getHeros().size() <= 3 && vote.getHeros().size() > 0;
+	}
+
+	@Override
+	public List<Map<String, Long>> result(String startYmd, String endYmd) {
+		Map<String, Object> paramMap = new HashMap<>();
+		paramMap.put("startYmd", startYmd);
+		paramMap.put("endYmd", endYmd);
+		
+		return voteRepository.selectSumForHero(paramMap);
 	}
 
 }
