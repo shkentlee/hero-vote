@@ -13,4 +13,6 @@ public interface VoteService {
 	boolean isGreaterThanMaxium(Vote vote);
 
 	List<Map<String, Long>> result(String startYmd, String endYmd);
+
+	List<Map<String, Long>> result(String hero, String startYmd, String endYmd);
 }

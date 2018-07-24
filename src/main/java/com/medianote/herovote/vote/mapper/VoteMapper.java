@@ -16,4 +16,6 @@ public interface VoteMapper {
 	void insertHeros(Vote vote);
 
 	List<Map<String, Long>>  selectSumForHero(Map<String, Object> paramMap);
+
+	List<Map<String, Long>> selectUsersForHero(Map<String, Object> paramMap);
 }

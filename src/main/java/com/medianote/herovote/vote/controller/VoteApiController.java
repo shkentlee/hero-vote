@@ -49,4 +49,10 @@ public class VoteApiController {
     public AjaxResult result(@PathVariable("start") String startYmd, @PathVariable("end") String endYmd) {
     	return new AjaxResult("0000", "success", voteService.result(startYmd, endYmd));
     }
+	
+	@ResponseBody
+	@RequestMapping(value = "/{hero}/{start}/{end}", method = RequestMethod.GET)
+    public AjaxResult resultByUser(@PathVariable("hero") String hero, @PathVariable("start") String startYmd, @PathVariable("end") String endYmd) {
+    	return new AjaxResult("0000", "success", voteService.result(hero, startYmd, endYmd));
+    }
 }

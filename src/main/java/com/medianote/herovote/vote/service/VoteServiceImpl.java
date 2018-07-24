@@ -43,4 +43,14 @@ public class VoteServiceImpl implements VoteService {
 		return voteRepository.selectSumForHero(paramMap);
 	}
 
+	@Override
+	public List<Map<String, Long>> result(String hero, String startYmd, String endYmd) {
+		Map<String, Object> paramMap = new HashMap<>();
+		paramMap.put("hero", hero);
+		paramMap.put("startYmd", startYmd);
+		paramMap.put("endYmd", endYmd);
+		
+		return voteRepository.selectUsersForHero(paramMap);
+	}
+
 }

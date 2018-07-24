@@ -49,4 +49,19 @@
 		order by 
 			vh.hero_cd	 
 	</select>
+	
+	<select id="selectUsersForHero" parameterType="map" resultType="map">
+		select 
+			vh.hero_cd AS "HERO",
+			vote.usr_nm AS "name",
+			vote.usr_cph AS "phone",
+			vote.usr_bymd AS "birthday" 
+		from
+			vote 
+			join vote_hero vh
+			on vote.vote_seq = vh.vote_seq
+		where
+			vote.vote_ymd &gt;= #{startYmd} and vote.vote_ymd &lt; #{endYmd}
+			and vh.hero_cd = #{hero}
+	</select>
 </mapper>

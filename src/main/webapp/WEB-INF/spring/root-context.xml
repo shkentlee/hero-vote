@@ -18,12 +18,22 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	
+	<!-- ========================= PROPERTY PLACE HOLDER DEFINITION ========================= -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="false"/>
+		<property name="locations">
+			<list>
+				<value>classpath*:/datasource/datasource-${env}.properties</value>
+			</list>
+		</property>
+	</bean>
+	
 	<!-- mssql -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/herovote" />
-		<property name="username" value="hero" />
-		<property name="password" value="vote" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
 	</bean>
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
