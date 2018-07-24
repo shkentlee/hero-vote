@@ -53,4 +53,9 @@ public class VoteServiceImpl implements VoteService {
 		return voteRepository.selectUsersForHero(paramMap);
 	}
 
+	@Override
+	public boolean existsHero(Vote vote) {
+		return voteRepository.existsHero(vote);
+	}
+
 }

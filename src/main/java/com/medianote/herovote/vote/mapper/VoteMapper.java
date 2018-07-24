@@ -18,4 +18,6 @@ public interface VoteMapper {
 	List<Map<String, Long>>  selectSumForHero(Map<String, Object> paramMap);
 
 	List<Map<String, Long>> selectUsersForHero(Map<String, Object> paramMap);
+
+	boolean existsHero(Vote vote);
 }

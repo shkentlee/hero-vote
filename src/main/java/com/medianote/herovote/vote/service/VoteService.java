@@ -15,4 +15,6 @@ public interface VoteService {
 	List<Map<String, Long>> result(String startYmd, String endYmd);
 
 	List<Map<String, Long>> result(String hero, String startYmd, String endYmd);
+
+	boolean existsHero(Vote vote);
 }

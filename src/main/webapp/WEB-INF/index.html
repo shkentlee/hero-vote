@@ -1,208 +1,340 @@
-<!DOCTYPE html>
-<html>
-    <head>
-      <meta charset="utf-8">
-      <title>이달의 독립운동가_투표 이벤트</title>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>독립운동가_공식홈페이지</title>
 
-      <!-- css -->
-      <link rel="stylesheet" href="/css/bootstrap.min.css">
-      <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-      <link rel="stylesheet" href="/css/bootstrap-reboot.min.css">
-      <link rel="stylesheet" href="/css/style.css">
-
-      <link rel="stylesheet" href="/css/base.css">
-      <link rel="stylesheet" href="/css/vendor.css">
-      <link rel="stylesheet" href="/css/main.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-
-      <!-- js -->
-      <script src="/js/modernizr.js"></script>
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script src="/js/jquery.countdown.js"></script>
-
-      <!-- data aos -->
-      <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-      <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-      <script>
-        this.onload = function(){
-        AOS.init({
-            duration: 1500
-        })
-      }
-      </script>
-
-      <!-- favicon -->
-      <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-touch-icon-57x57.png">
-      <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-touch-icon-60x60.png">
-      <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png">
-      <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-touch-icon-76x76.png">
-      <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-touch-icon-114x114.png">
-      <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-touch-icon-120x120.png">
-      <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-touch-icon-144x144.png">
-      <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-touch-icon-152x152.png">
-      <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-180x180.png">
-      <link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32">
-      <link rel="icon" type="image/png" href="/img/favicon/android-chrome-192x192.png" sizes="192x192">
-      <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
-      <link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
-      <link rel="manifest" href="/img/favicon/manifest.json">
-      <link rel="shortcut icon" href="/img/favicon/favicon.ico">
-
-      <link rel="stylesheet" href="css/countdown.css" type="text/css">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon/android-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/img/favicon/manifest.json">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
 
 
-    </head>
-    <body>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-      <section class="header1 poster" id="header1-7" data-rv-view="758">
-        <div class="container-fluid p-0" style="width:100%;">
-            <div class="row" style="width:100%;">
-                <div class="mbr-white" style="width:100%;">
-                  <img class="poster" src="/img/poster.png" alt="포스터" style="width:100%;">
-                </div>
+    <script src="/js/modernizr.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/js/jquery.countdown.js"></script>
+    <link rel="stylesheet" href="/css/countdown.css" type="text/css">
+
+</head>
+<body>
+  <!-- menu -->
+  <header id="header">
+    <div class="header-content clearfix">
+        <nav class="navigation" role="navigation">
+            <ul class="primary-nav">
+              <li><a href="index.html">홈</a></li>
+              <li><a href="#vote">투표하기</a></li>
+              <li><a href="link/link.html">더알아보기</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="nav-toggle">Menu<span></span></a>
+    </div>
+  </header>
+
+  <!-- poster -->
+  <section class="section poster" id="header1-7" data-rv-view="758">
+    <div class="container p-0" style="width:100%;">
+        <div class="row">
+            <div class="mbr-white">
+              <img class="poster" src="/img/hero.png" alt="포스터" style="width:100%;">
+              <img src="/img/eventpage.jpg" alt="이벤트" style="width:100%; display:block; margin:0 auto;">
             </div>
         </div>
-      </section>
+    </div>
+  </section>
 
-      <section style="background:#fff; padding:90px 0;">
-        <div class="container-fluid">
-          <div class="row" style="font-weight:900; font-size:4em;">
-            <p class="align-center">DEADLINE 2018.08.31</p>
-          </div>
-
-          <div class="row align-center">
-            <div class="count align-center"><time>2018-08-31T00:00:00+0900</time></div>
-          </div>
-        </div>
-
-        <script>
-          window.jQuery(function ($) {
-            "use strict";
-
-            $('time').countDown({
-                with_separators: false
-            });
-          });
-        </script>
-      </section>
-
-      <section style="padding:10em 0;">
-        <div class="container align-center">
-            <div class="">
-                <h3 style="color:#292c47; letter-spacing:20px;">Vote for your Hero!</h3>
-                <a href="/hero-vote/vote" class="btn btn-large">투표하러가기</a>
+  <!-- vote -->
+  <section id="vote" class="section">
+    <div class="container">
+      <div class="row explain text-center">
+        <img class="click" src="/img/click.png" alt="클릭안내" style="margin-bottom:30px; width:100%;">
+      </div>
+      <div class="row show-grid">
+        <form id="voteForm"  name="user" method="post" action="">
+          <fieldset>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <input type="checkbox" name="check" value="1" id="ch4" onclick=CountChecked(this)>
+              <label for="ch4">
+                <img src="/img/person/1/1-04.jpg" alt="권기옥">
+              </label>
             </div>
-        </div>
-      </section>
-
-      <section style="padding:10em 0; background:#fff;s">
-        <h3>금주의 이벤트 당첨자</h3><br>
-        <ul>
-          <li>함보라(0516)</li>
-          <li>함보라(0516)</li>
-          <li>함보라(0516)</li>
-          <li>함보라(0516)</li>
-          <li>함보라(0516)</li>
-        </ul>
-      </section>
-
-      <!-- <section class="header1 poster" id="header1-7" data-rv-view="758">
-
-          <div class="container-fluid p-0" style="width:100%;">
-              <div class="row" style="width:100%;">
-                  <div class="mbr-white" style="width:100%;">
-                    <img class="poster" src="/img/poster1.png" alt="포스터" style="width:100%;">
-                  </div>
-              </div>
-          </div>
-      </section> -->
-
-      <section class="clients sns" id="clients-2" data-rv-view="777">
-        <div class="container mb-5">
-            <div class="media-container-row">
-                <div class="col-12 align-center">
-                  <img src="/img/sns.png" alt="" style="width:60%; ">
-                </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <input type="checkbox" name="check" value="2" id="ch12" onclick=CountChecked(this)>
+              <label for="ch12">
+                <img src="/img/person/1/1-12.jpg" alt="김마리아">
+              </label>
             </div>
-        </div>
-        <div class="container">
-          <div class="carousel slide" data-ride="carousel" role="listbox">
-            <div class="carousel-inner" data-visible="4">
-              <div class="carousel-item ">
-                  <div class="media-container-row">
-                      <div class="col-md-12">
-                          <div class="wrap-img ">
-                            <a href="http://www.mpva.go.kr/main.asp" target="_blank"><img src="/img/banner1.png" class="img-responsive clients-img" media-simple="true"></a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="carousel-item ">
-                  <div class="media-container-row">
-                      <div class="col-md-12">
-                          <div class="wrap-img ">
-                            <a href="https://www.facebook.com/bohunstars/?ref=br_rs" target="_blank"><img src="/img/banner2.png" class="img-responsive clients-img" media-simple="true"></a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="carousel-item ">
-                  <div class="media-container-row">
-                      <div class="col-md-12">
-                          <div class="wrap-img ">
-                            <a href="https://www.instagram.com/ibohun/?hl=ko" target="_blank"><img src="/img/banner3.png" class="img-responsive clients-img" media-simple="true"></a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="carousel-item ">
-                  <div class="media-container-row">
-                      <div class="col-md-12">
-                          <div class="wrap-img ">
-                            <a href="https://www.youtube.com/channel/UC1xMxPx57jAMAIrw2-lscpA" target="_blank"><img src="/img/banner4.png" class="img-responsive clients-img" media-simple="true"></a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="carousel-item ">
-                  <div class="media-container-row">
-                      <div class="col-md-12">
-                          <div class="wrap-img ">
-                            <a href="http://cafe.naver.com/bohunstar" target="_blank"><img src="/img/banner5.png" class="img-responsive clients-img" media-simple="true"></a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <input type="checkbox" name="check" value="3" id="ch7" onclick=CountChecked(this)>
+              <label for="ch7">
+                <img src="/img/person/1/1-07.jpg" alt="김상옥">
+              </label>
             </div>
-            <div class="carousel-controls">
-                <a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev">
-                    <span aria-hidden="true" class="fa fa-arrow-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a data-app-prevent-settings="" class="carousel-control carousel-control-next" role="button" data-slide="next">
-                    <span aria-hidden="true" class="fa fa-arrow-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <input type="checkbox" name="check" value="4" id="ch9" onclick=CountChecked(this)>
+              <label for="ch9">
+                <img src="/img/person/1/1-09.jpg" alt="김성숙">
+              </label>
             </div>
-          </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <input type="checkbox" name="check" value="5" id="ch3" onclick=CountChecked(this)>
+              <label for="ch3">
+                <img src="/img/person/1/1-03.jpg" alt="김좌진">
+              </label>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <input type="checkbox" name="check" value="6" id="ch6" onclick=CountChecked(this)>
+              <label for="ch6">
+                <img src="/img/person/1/1-06.jpg" alt="손병희">
+              </label>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <input type="checkbox" name="check" value="7" id="ch5" onclick=CountChecked(this)>
+              <label for="ch5">
+                <img src="/img/person/1/1-05.jpg" alt="안경신">
+              </label>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <input type="checkbox" name="check" value="8" id="ch1" onclick=CountChecked(this)>
+              <label for="ch1">
+                <img src="/img/person/1/1-01.jpg" alt="안중근">
+              </label>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <input type="checkbox" name="check" value="9" id="ch2" onclick=CountChecked(this)>
+              <label for="ch2">
+                <img src="/img/person/1/1-02.jpg" alt="윤봉길">
+              </label>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <input type="checkbox" name="check" value="10" id="ch8" onclick=CountChecked(this)>
+              <label for="ch8">
+                <img src="/img/person/1/1-08.jpg" alt="이동녕">
+              </label>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <input type="checkbox" name="check" value="11" id="ch11" onclick=CountChecked(this)>
+              <label for="ch11">
+                <img src="/img/person/1/1-11.jpg" alt="정인보">
+              </label>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <input type="checkbox" name="check" value="12" id="ch10" onclick=CountChecked(this)>
+              <label for="ch10">
+                <img src="/img/person/1/1-10.jpg" alt="홍범도">
+              </label>
+            </div>
+
+
+            <script>
+
+
+            //3개 미만일때도 투표가 가능한 코드입니다.
+            //딱 3명만 투표 가능하게 수정해주세요!
+
+
+
+            var maxChecked = 3;   //선택가능한 체크박스 갯수
+            var totalChecked = 0;
+
+            function CountChecked(field) {
+              if (field.checked)
+                totalChecked += 1;
+              else
+                totalChecked -= 1;
+
+              if (totalChecked > maxChecked) {
+                alert ("최대 3명까지 투표 가능합니다.");
+                field.checked = false;
+                totalChecked -= 1;
+              }
+            }
+            </script>
+
+
+          </fieldset>
+
+          <fieldset class="user">
+            <input type="text" name="name" value="이름" id="name">
+            <label for="name"></label>
+            <input type="text" name="phone" value="핸드폰 번호(-없이 입력해주세요.)" id="phone">
+            <label for="phone"></label>
+            <input type="text" name="birth" value="생년월일(ex.930516)" id="birth">
+            <label for="birth"></label>
+          </fieldset>
+        </form>
+
+        <input type="image" src="/img/vote.png" value="투표하기" id="voteBtn" class="text-center">
+      </div>
+    </div>
+  </section>
+
+  <!-- clock -->
+  <section class="section" style="background:#fff; padding:30px 0;">
+    <div class="container">
+      <div class="row" style="font-weight:900; font-size:4em;">
+        <img style="display:block; width:100%; margin:10px auto;"src="/img/clock.png" alt="종료시간">
+      </div>
+
+      <div class="row">
+        <div class="count text-center"><time>2018-08-07T00:00:00+0900</time></div>
+      </div>
+    </div>
+
+    <script>
+      window.jQuery(function ($) {
+        "use strict";
+
+        $('time').countDown({
+            with_separators: false
+        });
+      });
+    </script>
+  </section>
+
+  <!-- btn -->
+  <section class="section link_btn">
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-6 text-center"><a target="_blank" href="https://www.facebook.com/bohunstars/?ref=bookmarks"><img src="/img/event.png" alt="당첨자확인" style="width:100%;"></a></div>
+          <div class="col-sm-6 text-center"><a target="_blank" href="link/link.html"><img src="/img/link.png" alt="더알아보기" style="width:100%;"></a></div>
         </div>
-      </section>
+    </div>
+  </section>
 
-      <section class="footer" id="footer6-5" data-rv-view="794">
-          <div class="container">
-              <div class="media-container-row align-center mbr-white">
-                  <div class="col-12">
-                      <p class="mbr-text mb-0 mbr-fonts-style display-7">
-                          © Copyright 20180704 <a href="http://media-note.co.kr" class="text-black">medianote</a> - All Rights Reserved
-                      </p>
-                  </div>
-              </div>
+  <footer class="footer">
+    <div class="footer-bottom">
+      <div class="container">
+          <div class="">
+              <p>Copyright © 2018 <a target="_blank" href="http://www.mpva.go.kr/">국가보훈처</a>. All Rights Reserved</p>
           </div>
-      </section>
+      </div>
+    </div>
+  </footer>
 
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.waypoints.min.js"></script>
+    <script src="/js/retina.min.js"></script>
+    <script src="/js/modernizr.js"></script>
+    <script src="/js/main.js"></script>
 
-    </body>
+</body>
+<script type="text/javascript">
+$( document ).ready(function() {
+	$('#voteBtn').click(function(event) {
+		event.preventDefault();
+		
+		if (isVoteFormDataValid() == false) {
+			return;
+		}
+		
+		var vote = {
+			userName : document.user.name.value,
+			cellPhone : document.user.phone.value,
+			birthday : document.user.birth.value,
+	        heros : []
+		}
+		
+		$("#voteForm fieldset div").each(function() {
+			var input = $(this).find("input")[0];
+			
+			if (input.checked) {
+				var hero = {
+					id : input.value
+				}
+				
+				vote.heros[vote.heros.length] = hero;			
+			}
+		});
+		
+		 var jsonInfo = JSON.stringify(vote);
+         console.log(jsonInfo);
+         
+         jQuery["postJSON"] = function( url, data, callback ) {
+        	    // shift arguments if data argument was omitted
+        	    if ( jQuery.isFunction( data ) ) {
+        	        callback = data;
+        	        data = undefined;
+        	    }
+
+        	    return jQuery.ajax({
+        	        url: url,
+        	        type: "POST",
+        	        contentType:"application/json; charset=utf-8",
+        	        dataType: "json",
+        	        data: data,
+        	        success: callback
+        	    });
+        	};
+		
+		$.postJSON("/hero-vote/vote", jsonInfo, function(result) {
+			if (result.code === "0000") {
+				//투표완료
+                window.open("/html/ok.html", "ok", "width=515, height=550, left=100, top=50");
+     
+				//location.href = "/"
+				return;
+			}
+			
+			if (result.code === "1000") {
+				window.open("/html/cancel.html", "cancel", "width=515, height=550, left=100, top=50");
+				return;
+			}
+            	
+			//실패
+			alert(result.message);
+		}, "json");
+	});
+})
+
+function isVoteFormDataValid(){
+    var name = document.user.name.value;
+    var phone = document.user.phone.value;
+    var birth = document.user.birth.value;
+
+    if(!name) {
+      alert("이름을 입력해주세요.");
+      document.user.name.focus();
+    }
+    else if(!phone) {
+      alert("핸드폰번호를 입력해주세요.(-없이 입력해주세요)");
+      document.user.phone.focus();
+    }
+    else if(isNaN(phone)==true){
+      alert("-없이 숫자만 입력해주세요.");
+    }
+    else if(!birth) {
+      alert("생일을 입력해주세요.");
+      document.user.birth.focus();
+    }
+    else if(isNaN(birth)==true){
+      alert("생년월일을 숫자로만 입력해주세요.");
+    }
+}
+</script>
 </html>

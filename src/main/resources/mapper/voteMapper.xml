@@ -4,7 +4,7 @@
 <mapper namespace="com.medianote.herovote.vote.mapper.VoteMapper">
 	<select id="isDuplicated" parameterType="com.medianote.herovote.vote.model.Vote" resultType="boolean">
 		select 
-			if(COUNT(*)>0,'true','false') AS my_bool
+			if(COUNT(*) &gt; 0,'true','false') AS my_bool
 		from 
 			vote
 		where
@@ -12,6 +12,17 @@
 			and usr_nm = #{userName}
 			and usr_bymd = #{birthday}
 			and usr_cph = #{cellPhone}
+	</select>
+	
+	<select id="existsHero" parameterType="com.medianote.herovote.vote.model.Vote" resultType="boolean">
+		select
+			if(COUNT(*) &lt; 1,'true','false') AS my_bool
+		from
+			hero
+		where
+			<foreach collection="heros" item="item" separator="and ">
+            	#{item.id}
+        	</foreach>
 	</select>
 	
 	<insert id="insert" parameterType="com.medianote.herovote.vote.model.Vote">
@@ -27,41 +38,41 @@
 	
 	<insert id="insertHeros" parameterType="com.medianote.herovote.vote.model.Vote">
 		insert into vote_hero 
-			(vote_seq, hero_cd)
+			(vote_seq, hero_id)
 		values 
 			<foreach collection="heros" item="item" separator=" , ">
-            	(#{id}, #{item.code})
+            	(#{id}, #{item.id})
         	</foreach>
 	</insert>
 	
 	<select id="selectSumForHero" parameterType="map" resultType="map">
 		select 
-			vh.hero_cd AS "HERO",
+			vh.hero_nm AS "HERO",
 			count(vh.vote_hero_seq) AS "VOTE" 
 		from
 			vote 
-			join vote_hero vh
-			on vote.vote_seq = vh.vote_seq
+			join vote_hero vh on vote.vote_seq = vh.vote_seq
+			join hero on vh.hero_id = hero.hero_id
 		where
 			vote.vote_ymd &gt;= #{startYmd} and vote.vote_ymd &lt; #{endYmd}
 		group by
-			vh.hero_cd
+			vh.hero_id
 		order by 
-			vh.hero_cd	 
+			vh.hero_id	 
 	</select>
 	
 	<select id="selectUsersForHero" parameterType="map" resultType="map">
 		select 
-			vh.hero_cd AS "HERO",
+			hero.hero_nm AS "HERO",
 			vote.usr_nm AS "name",
 			vote.usr_cph AS "phone",
 			vote.usr_bymd AS "birthday" 
 		from
 			vote 
-			join vote_hero vh
-			on vote.vote_seq = vh.vote_seq
+			join vote_hero vh on vote.vote_seq = vh.vote_seq
+			join hero on vh.hero_id = hero.hero_id
 		where
 			vote.vote_ymd &gt;= #{startYmd} and vote.vote_ymd &lt; #{endYmd}
-			and vh.hero_cd = #{hero}
+			and vh.hero_id = #{heroId}
 	</select>
 </mapper>

@@ -6,9 +6,7 @@ import lombok.Data;
 
 @Data
 public class Hero {
-	private long id;
-	private long voteId;
-	
 	@NotEmpty(message = "영웅을 입력 하세요")
-	private String code;
+	private long id;
+	private String name;
 }

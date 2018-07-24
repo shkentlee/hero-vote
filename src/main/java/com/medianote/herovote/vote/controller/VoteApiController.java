@@ -30,13 +30,17 @@ public class VoteApiController {
 	@ResponseBody
 	@RequestMapping(method = RequestMethod.POST, headers = "Accept=application/json")
     public AjaxResult vote(@RequestBody @Valid Vote vote, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+			List<ObjectError> errors = bindingResult.getAllErrors();
+			return new AjaxResult("2000", errors.get(0).getDefaultMessage());
+		}
+		
 		if (voteService.isDuplicated(vote)) {
 			return new AjaxResult("1000", "중복 투표");
 		}
 		
-		if (bindingResult.hasErrors()) {
-			List<ObjectError> errors = bindingResult.getAllErrors();
-			return new AjaxResult("2000", errors.get(0).getDefaultMessage());
+		if (voteService.existsHero(vote)) {
+			return new AjaxResult("1000", "존재 하지 않는 영웅");
 		}
 		
 		voteService.vote(vote);
